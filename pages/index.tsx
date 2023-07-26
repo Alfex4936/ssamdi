@@ -41,17 +41,20 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     }
   }, [photoId, lastViewedPhoto, setLastViewedPhoto]);
 
+  const currentPhotoUrl =
+    `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${process.env.CLOUDINARY_FOLDER}/2014/2014-08.jpg`;
+
   return (
     <>
       <Head>
         <title>쌈디(SSAMDI) 전시회</title>
         <meta
           property="og:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content={currentPhotoUrl}
         />
         <meta
           name="twitter:image"
-          content="https://nextjsconf-pics.vercel.app/og-image.png"
+          content={currentPhotoUrl}
         />
       </Head>
       <main className="mx-auto max-w-[1960px] p-4">
